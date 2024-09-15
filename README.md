@@ -28,16 +28,32 @@ This guide will help you set up a Discord bot and deploy it using Heroku. Follow
    - Enter a name for your app and choose a region.
    - Click "Create app".
 
-## 3. Set Up Your Bot on Heroku
+## 3. Set Up Your Bot on Heroku (Easy Way without CLI)
 
-1. **Install the Heroku CLI** (if you haven’t already):
-   - Download and install it from [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+1. **Connect Your GitHub Account to Heroku**:
+   - In your Heroku Dashboard, go to the "Deploy" tab of your app.
+   - Under "Deployment method", select "GitHub" and click "Connect to GitHub".
+   - Authorize Heroku to access your GitHub account if prompted.
+   - Search for your repository by name and click "Connect".
 
-2. **Log In to Heroku CLI**:
-   - Open your terminal or command prompt.
-   - Run `heroku login` and follow the prompts to log in.
+2. **Create a GitHub Repository**:
+   - Go to [GitHub](https://github.com/) and log in or sign up if you don’t have an account.
+   - Click the "+" icon in the top right corner and select "New repository".
+   - Give your repository a name and description, choose public or private, and click "Create repository".
 
-3. **Add Your Discord Bot Token**:
+3. **Add Your Code to the Repository Using GitHub’s Web Interface**:
+   - Navigate to your newly created GitHub repository.
+   - Click on the "Add file" button and select "Upload files".
+   - Drag and drop your project files into the upload area or click "Choose your files" to select them from your computer.
+   - After uploading your files, scroll down and click "Commit changes" to save them to the repository.
+
+4. **Deploy Your Code Using GitHub**:
+   - Go back to the "Deploy" tab on Heroku.
+   - Under "Automatic deploys", click "Enable Automatic Deploys".
+   - Choose the branch you want to deploy (usually `master` or `main`) and click "Deploy Branch".
+   - Heroku will automatically deploy your code from GitHub. You can check the progress in the "Activity" tab.
+
+5. **Add Your Discord Bot Token**:
    - In your Heroku Dashboard, go to the "Settings" tab of your app.
    - Click "Reveal Config Vars" under the "Config Vars" section.
    - Add a new variable with the key `DISCORD_TOKEN` and paste your Discord bot token as the value.
@@ -45,28 +61,9 @@ This guide will help you set up a Discord bot and deploy it using Heroku. Follow
 
 ## 4. Deploy Your Code on Heroku
 
-1. **Prepare Your Code**:
-   - Make sure your bot’s code is ready and you have a `Procfile` in the root of your project with the following content:
-     ```
-     worker: node your-bot-file.js
-     ```
-
-2. **Deploy Your Code**:
-   - If you’re using Git, navigate to your project directory in the terminal.
-   - Initialize a git repository if you haven't already:
-     ```bash
-     git init
-     ```
-   - Add your Heroku remote:
-     ```bash
-     heroku git:remote -a your-heroku-app-name
-     ```
-   - Add, commit, and push your code:
-     ```bash
-     git add .
-     git commit -m "Initial commit"
-     git push heroku master
-     ```
+1. **Deploy Your Code**:
+   - Since you've enabled automatic deploys in the previous steps, any new commits to your GitHub repository will automatically deploy to Heroku.
+   - If you need to manually deploy, you can click the "Deploy" button under the "Manual deploy" section in the "Deploy" tab.
 
 ## 5. Find Your Discord Channel ID
 
@@ -84,4 +81,3 @@ Your Discord bot should now be live and running on Heroku. If you encounter any 
 
 ```bash
 heroku logs --tail
-```
