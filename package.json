@@ -1,0 +1,16 @@
+{
+  "name": "discord-faceit-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for FACEIT tournaments",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "18.20.4"
+  }
+}
