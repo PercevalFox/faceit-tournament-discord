@@ -58,6 +58,7 @@ This guide will help you set up a Discord bot and deploy it using Heroku. Follow
    - Click "Reveal Config Vars" under the "Config Vars" section.
    - Add a new variable with the key `DISCORD_TOKEN` and paste your Discord bot token as the value.
    - Click "Add" to save it.
+   - You can also add your discord channels (with the same way to do than with DISCORD_TOKEN in Config Vars, it's more secure =) 
 
 ## 4. Deploy Your Code on Heroku
 
