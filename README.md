@@ -79,5 +79,9 @@ This guide will help you set up a Discord bot and deploy it using Heroku. Follow
 
 Your Discord bot should now be live and running on Heroku. If you encounter any issues, check the Heroku logs for errors using:
 
-```bash
-heroku logs --tail
+Go to your Dashboard on Heroku, then click on more (right up), then view logs and you'll have every info =) 
+Everything is up when you see the message : 
+
+''' 
+Connected as BOT_NAME!
+'''
